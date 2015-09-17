@@ -27,12 +27,19 @@ namespace Kontaktkontrakt
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            addForm.Visible = true;
+            addForm.Visible = !addForm.Visible;
+            if (addForm.Visible == true)
+            {
+                this.ActiveControl = addFormFName;
+            }
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-
+            foreach (ListViewItem i in contactsList.SelectedItems)
+            {
+                contactsList.Items.Remove(i);
+            }
         }
 
         private void addFormAccept_Click(object sender, EventArgs e)
@@ -49,7 +56,7 @@ namespace Kontaktkontrakt
             if (txtBoxEmpty == false)
             {
                 ListViewItem item = new ListViewItem(new[] {addFormFName.Text, addFormLName.Text, addFormNumber.Text, addFormEmail.Text});
-                listView1.Items.Add(item);
+                contactsList.Items.Add(item);
                 clearBoxes(addForm);
             }
             else
