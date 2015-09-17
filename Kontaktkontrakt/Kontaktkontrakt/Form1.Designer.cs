@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
             this.addButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.removeButton = new System.Windows.Forms.Button();
@@ -53,17 +52,6 @@
             this.addForm.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
-            // 
-            this.panel2.AutoSize = true;
-            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(5, 557);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(874, 0);
-            this.panel2.TabIndex = 1;
-            // 
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
@@ -86,7 +74,6 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.removeButton);
             this.flowLayoutPanel1.Controls.Add(this.addButton);
             this.flowLayoutPanel1.Controls.Add(this.addForm);
@@ -132,9 +119,10 @@
             this.addForm.Controls.Add(this.addFormNumber);
             this.addForm.Controls.Add(this.addFormLName);
             this.addForm.Controls.Add(this.addFormFName);
-            this.addForm.Location = new System.Drawing.Point(3, 43);
+            this.addForm.Location = new System.Drawing.Point(0, 43);
+            this.addForm.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.addForm.Name = "addForm";
-            this.addForm.Size = new System.Drawing.Size(868, 360);
+            this.addForm.Size = new System.Drawing.Size(874, 360);
             this.addForm.TabIndex = 3;
             this.addForm.Visible = false;
             // 
@@ -261,12 +249,13 @@
             this.lastnameCol,
             this.phoneCol,
             this.emailCol});
-            this.contactsList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contactsList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.contactsList.FullRowSelect = true;
-            this.contactsList.Location = new System.Drawing.Point(3, 409);
-            this.contactsList.MinimumSize = new System.Drawing.Size(868, 200);
+            this.contactsList.Location = new System.Drawing.Point(0, 409);
+            this.contactsList.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.contactsList.MinimumSize = new System.Drawing.Size(872, 510);
             this.contactsList.Name = "contactsList";
-            this.contactsList.Size = new System.Drawing.Size(868, 506);
+            this.contactsList.Size = new System.Drawing.Size(874, 510);
             this.contactsList.TabIndex = 6;
             this.contactsList.UseCompatibleStateImageBehavior = false;
             this.contactsList.View = System.Windows.Forms.View.Details;
@@ -289,7 +278,7 @@
             // emailCol
             // 
             this.emailCol.Text = "E-Mail";
-            this.emailCol.Width = 364;
+            this.emailCol.Width = 370;
             // 
             // addFormTitle
             // 
@@ -308,7 +297,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(884, 562);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1200, 600);
             this.MinimumSize = new System.Drawing.Size(900, 600);
@@ -324,7 +312,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button removeButton;

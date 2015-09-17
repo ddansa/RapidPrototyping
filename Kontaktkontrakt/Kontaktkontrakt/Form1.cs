@@ -25,13 +25,19 @@ namespace Kontaktkontrakt
             }
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void toggleView()
         {
-            addForm.Visible = !addForm.Visible;
+            
             if (addForm.Visible == true)
             {
                 this.ActiveControl = addFormFName;
             }
+            addForm.Visible = !addForm.Visible;
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            toggleView();
         }
 
         private void removeButton_Click(object sender, EventArgs e)
