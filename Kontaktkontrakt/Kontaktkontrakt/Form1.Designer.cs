@@ -32,6 +32,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.removeButton = new System.Windows.Forms.Button();
             this.addForm = new System.Windows.Forms.Panel();
+            this.addFormTitle = new System.Windows.Forms.Label();
             this.addFormCancel = new System.Windows.Forms.Button();
             this.addFormAccept = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.lastnameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.phoneCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.emailCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.addFormTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.addForm.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +125,16 @@
             this.addForm.Size = new System.Drawing.Size(874, 360);
             this.addForm.TabIndex = 3;
             this.addForm.Visible = false;
+            // 
+            // addFormTitle
+            // 
+            this.addFormTitle.AutoSize = true;
+            this.addFormTitle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addFormTitle.Location = new System.Drawing.Point(12, 13);
+            this.addFormTitle.Name = "addFormTitle";
+            this.addFormTitle.Size = new System.Drawing.Size(143, 23);
+            this.addFormTitle.TabIndex = 10;
+            this.addFormTitle.Text = "Lägg Till Kontakt";
             // 
             // addFormCancel
             // 
@@ -244,6 +254,7 @@
             // 
             // contactsList
             // 
+            this.contactsList.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this.contactsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.firstnameCol,
             this.lastnameCol,
@@ -251,6 +262,7 @@
             this.emailCol});
             this.contactsList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.contactsList.FullRowSelect = true;
+            this.contactsList.LabelWrap = false;
             this.contactsList.Location = new System.Drawing.Point(0, 409);
             this.contactsList.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.contactsList.MinimumSize = new System.Drawing.Size(872, 510);
@@ -259,6 +271,7 @@
             this.contactsList.TabIndex = 6;
             this.contactsList.UseCompatibleStateImageBehavior = false;
             this.contactsList.View = System.Windows.Forms.View.Details;
+            this.contactsList.ItemActivate += new System.EventHandler(this.contactsList_ItemActivate);
             // 
             // firstnameCol
             // 
@@ -279,16 +292,6 @@
             // 
             this.emailCol.Text = "E-Mail";
             this.emailCol.Width = 370;
-            // 
-            // addFormTitle
-            // 
-            this.addFormTitle.AutoSize = true;
-            this.addFormTitle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addFormTitle.Location = new System.Drawing.Point(12, 13);
-            this.addFormTitle.Name = "addFormTitle";
-            this.addFormTitle.Size = new System.Drawing.Size(143, 23);
-            this.addFormTitle.TabIndex = 10;
-            this.addFormTitle.Text = "Lägg Till Kontakt";
             // 
             // Form1
             // 
