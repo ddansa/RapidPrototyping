@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -19,18 +20,6 @@ namespace L4WebApp.Controllers
             return View(_db.Contacts.ToList());
         }
         
-        //[HttpPost]
-        public ActionResult DropTables(int[] ids)
-        {
-            return View(ids);
-        }
-
-        // GET: Home/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         // GET: Home/Create
         public ActionResult Create()
         {
@@ -39,18 +28,14 @@ namespace L4WebApp.Controllers
 
         // POST: Home/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(List<string> newContact)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                /*var Fname = newContact[0];
+                var Lname = newContact[1];
+                var Telnum = newContact[2];
+                var Email = newContact[3];*/
+                return Json(newContact);
+                    return RedirectToAction("Index");
         }
 
         // GET: Home/Edit/5
@@ -59,26 +44,22 @@ namespace L4WebApp.Controllers
             return View();
         }
 
-        // POST: Home/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Home/Delete/5
+        // POST: Home/Delete/5
         [HttpPost]
         public JsonResult Delete(List<int> ids)
         {
+            if (ids != null) { 
+                foreach (var n in ids)
+                {
+                    //var i = ids[n];
+                    _db.Contacts.Where(c => c.Id == n)
+                        .ToList().ForEach(c => _db.Contacts.Remove(c));
+
+                    _db.SaveChanges();
+                }
+            }
+            RedirectToAction("Index", "Home");
             return Json(ids);
         }
     }

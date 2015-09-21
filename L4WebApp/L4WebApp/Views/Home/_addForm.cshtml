@@ -1,22 +1,49 @@
-﻿<div class="collapse k-wrap" id="addForm">
-    <form>
+﻿<div class="collapse k-wrap" id="k-form-wrap">
+    <form id="#addForm">
         <div class="form-group">
             <label for="addFirstName">Förnamn</label>
-            <input type="text" class="form-control sharpr" id="addFirstName" placeholder="Förnamn" />
+            <input type="text" class="form-control sharpr" id="addFirstName" name="Fname" placeholder="Förnamn"/>
         </div>
         <div class="form-group">
             <label for="addLastName">Efternamn</label>
-            <input type="text" class="form-control sharpr" id="addLastName" placeholder="Efternamn" />
+            <input type="text" class="form-control sharpr" id="addLastName" name="Lname" placeholder="Efternamn"/>
         </div>
         <div class="form-group">
             <label for="addTelephone">Telefonnummer</label>
-            <input type="tel" class="form-control sharpr" id="addTelephone" placeholder="Telefonnummer" />
+            <input type="tel" class="form-control sharpr" id="addTelephone" name="Telnum" placeholder="Telefonnummer"/>
         </div>
         <div class="form-group">
             <label for="addEmail">E-mail adress</label>
-            <input type="email" class="form-control sharpr" id="addEmail" placeholder="E-Mail" />
+            <input type="email" class="form-control sharpr" id="addEmail" name="Email" placeholder="E-Mail"/>
         </div>
-        <button type="submit" class="btn btn-main sharpr">Lägg till</button>
+        <button class="btn btn-main sharpr" id="k-add">Lägg till</button>
         <button class="btn btn-sec sharpr" data-toggle="collapse" href="#addForm">Avbryt</button>
     </form>
 </div>
+<script>
+    $(function() {
+        $("#k-add").click(function(e) {
+            e.preventDefault();
+            var valuesArr = new Array();
+            valuesArr[0] = $("#addFirstName").val();
+            valuesArr[1] = $("#addLastName").val();
+            valuesArr[2] = $("#addTelephone").val();
+            valuesArr[3] = $("#addEmail").val();
+
+            var data = { values: valuesArr };
+            
+            console.log(data);
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Create", "Home")',
+                data: data,
+                dataType: "json",
+                traditional: true,
+                success: function (result) {
+                    console.log("result = " + result);
+                    //$("tr.info").each(function () { $(this).remove() });
+                }
+            });
+        });
+    })
+</script>
