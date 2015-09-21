@@ -1,0 +1,37 @@
+﻿[
+  {
+    "id": 0,
+    "fname": "J0hn",
+    "lname": "D0e",
+    "tel": "070-5555555",
+    "email": "j0hn_doe@mail.com"
+  },
+  {
+    "id": 1,
+    "fname": "J1hn",
+    "lname": "D1e",
+    "tel": "071-5555555",
+    "email": "j1hn_doe@mail.com"
+  },
+  {
+    "id": 2,
+    "fname": "J2hn",
+    "lname": "D2e",
+    "tel": "072-5555555",
+    "email": "j2hn_doe@mail.com"
+  },
+  {
+    "id": 3,
+    "fname": "J3hn",
+    "lname": "D3e",
+    "tel": "073-5555555",
+    "email": "j3hn_doe@mail.com"
+  },
+  {
+    "id": 4,
+    "fname": "J4hn",
+    "lname": "D4e",
+    "tel": "074-5555555",
+    "email": "j4hn_doe@mail.com"
+  }
+]
