@@ -1,0 +1,132 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: #222;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.btcf:before,
+.btcf:after {
+    content: " ";
+    display: table;
+}
+
+.btcf:after {
+    clear: both;
+}
+
+.btcf {
+    *zoom: 1;
+}
+
+.k-pad {
+    padding: 15px;
+}
+
+.k-nav {
+    background: #DDD;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 50px;
+    //margin-bottom: 20px;
+    z-index: 999;
+}
+
+.k-menu {
+    float: right;
+}
+
+.k-menu > button {
+    margin: 7px 5px
+}
+
+.k-wrap {
+    background: #F9F9F9;
+
+}
+
+.k-wrap {
+     margin: 0 0 10px 0;
+}
+
+.k-wrap + .k-wrap{
+    margin-top: 10px;
+}
+
+.k-wrap > form {
+    padding: 30px;
+}
+
+.sharpr {
+  border-radius: 0;
+}
+
+.btn-main, .btn-del, .btn-main:hover, .btn-del:hover, .btn-main:focus, .btn-del:focus, .btn-sec, .btn-sec:hover, .btn-sec:focus {
+    color: #FFF;
+}
+
+.btn-main, .btn-del, .btn-sec {
+    box-shadow: rgba(0,0,0,0.3) 0px 1px 5px 0;
+    transition: all .25s ease-in;
+}
+
+.btn-main:hover, .btn-del:hover, .btn-sec:hover {
+    box-shadow: rgba(0,0,0,0.3) 0px 1px 7px 0;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.7);
+    transform: translateY(-2px);
+}
+
+.btn-main {
+    background: #309DED;
+	border: 1px solid #2B8DD5;
+}
+
+.btn-main:hover {
+    background: #267DBC;
+	border-color: #2270A9;
+}
+
+.btn-del {
+    background: #E74B4B;
+    border-color: #BA4545;
+}
+
+.btn-del:hover {
+    background: #BA4545;
+    border-color: #953737;
+}
+
+.btn-sec {
+    background: #808080;
+    border-color: #6E6E6E;
+}
+
+.btn-sec:hover {
+    background: #6E6E6E;
+    border-color: #4D4D4D;
+}
