@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KontkatWebbApp", "KontkatWebbApp\KontkatWebbApp.csproj", "{4C1A0EB6-E187-4106-AC38-11E9818D2B0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{DC071BD1-D490-4E0D-9A42-23FD657EB96C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9D937271-10AC-464D-802D-7FEA5393FE12}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\ConfigureWebServer.ps1 = PublishScripts\Scripts\ConfigureWebServer.ps1
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{138F2450-564F-4252-9313-E7092CE46D75}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\KontkatWebbApp.json = PublishScripts\Templates\KontkatWebbApp.json
+		PublishScripts\Templates\KontkatWebbApp.param.dev.json = PublishScripts\Templates\KontkatWebbApp.param.dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C1A0EB6-E187-4106-AC38-11E9818D2B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1A0EB6-E187-4106-AC38-11E9818D2B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1A0EB6-E187-4106-AC38-11E9818D2B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1A0EB6-E187-4106-AC38-11E9818D2B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D937271-10AC-464D-802D-7FEA5393FE12} = {DC071BD1-D490-4E0D-9A42-23FD657EB96C}
+		{138F2450-564F-4252-9313-E7092CE46D75} = {DC071BD1-D490-4E0D-9A42-23FD657EB96C}
+	EndGlobalSection
+EndGlobal
