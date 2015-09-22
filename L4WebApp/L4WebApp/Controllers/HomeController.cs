@@ -17,7 +17,7 @@ namespace L4WebApp.Controllers
     {
 
 
-        private ContactsDBEntities _db = new ContactsDBEntities();
+        private ContactsDBazEntities _db = new ContactsDBazEntities();
         // GET: Home
         public ActionResult Index()
         {
@@ -26,7 +26,7 @@ namespace L4WebApp.Controllers
 
         public ActionResult GetContacts()
         {
-            ContactsDBEntities model = new ContactsDBEntities();
+            ContactsDBazEntities model = new ContactsDBazEntities();
             return PartialView("_contTable", model.Contacts.ToList());
         }
 
