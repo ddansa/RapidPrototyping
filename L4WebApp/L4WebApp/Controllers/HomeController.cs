@@ -24,6 +24,11 @@ namespace L4WebApp.Controllers
             return View(_db.Contacts.ToList());
         }
 
+        public ActionResult GetContacts()
+        {
+            ContactsDBEntities model = new ContactsDBEntities();
+            return PartialView("_contTable", model.Contacts.ToList());
+        }
 
         // GET: Home/Create
         public ActionResult Create()
@@ -37,13 +42,12 @@ namespace L4WebApp.Controllers
         {
             foreach(var n in values)
             {
-                if (n == null)
+                if (String.IsNullOrEmpty(n))
                 {
                     return Json(false);
                 }
             }
             var newContact = new Contact();
-            //newContact.Id = 0;
             newContact.Fname = values[0];
             newContact.Lname = values[1];
             newContact.Telnum = values[2];
@@ -51,13 +55,7 @@ namespace L4WebApp.Controllers
 
             _db.Contacts.Add(newContact);
             _db.SaveChanges();
-            /*using(var db = new ContactsDBEntities())
-            {
-                db.Contacts.Add(newContact);
-                db.SaveChanges();
-            }*/
-                return Json(true);
-                return RedirectToAction("Index");
+            return Json(true);
         }
 
         // GET: Home/Edit/5
@@ -71,19 +69,16 @@ namespace L4WebApp.Controllers
         [HttpPost]
         public JsonResult Delete(List<int> ids)
         {
-            if (ids != null) { 
-                foreach (var n in ids)
-                {
-                    //var i = ids[n];
-                    _db.Contacts.Where(c => c.Id == n)
-                        .ToList().ForEach(c => _db.Contacts.Remove(c));
-
-                    _db.SaveChanges();
-                }
+            if (ids == null) {
+                return Json(false);
             }
-            RedirectToAction("Index", "Home");
-            return Json(ids);
+            foreach (var n in ids)
+            {
+                _db.Contacts.Where(c => c.Id == n)
+                    .ToList().ForEach(c => _db.Contacts.Remove(c));
+                _db.SaveChanges();
+            }
+            return Json(true);
         }
-      
     }
 }

@@ -15,7 +15,10 @@ namespace L4WebApp
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                        "~/Scripts/L4WebApp.js"));
+                        "~/Scripts/L4WebApp.js",
+                        "~/Scripts/validator.js",
+                        "~/Scripts/jquery.quicksearch.js"
+                        ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

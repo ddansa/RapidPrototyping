@@ -14,28 +14,3 @@
         </table>
 </div>
 </div>
-
-<script>
-    $(function() {
-        $("#k-remove").click(function (e) {
-            e.preventDefault();
-            var activated = new Array()
-            $("tr.info").each(function () {
-                activated.push($(this).data("attribute"));
-            });
-
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("Delete", "Home")',
-                data: {ids : activated},
-                //dataType: "json",
-                traditional: true,
-                success: function (result) {
-                    console.log("result = " + result);
-                    $("tr.info").each(function() { $(this).remove()});
-                }
-            });
-            return false;
-        });
-    });
-</script>
