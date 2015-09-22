@@ -1,5 +1,8 @@
-﻿<div class="collapse k-wrap" id="k-form-wrap">
-    <form id="#addForm">
+﻿@using L4WebApp.Models
+@model IEnumerable<Contact>
+
+<div class="collapse k-wrap" id="k-form-wrap">
+    <form id="addForm">
         <div class="form-group">
             <label for="addFirstName">Förnamn</label>
             <input type="text" class="form-control sharpr" id="addFirstName" name="Fname" placeholder="Förnamn"/>
@@ -17,7 +20,7 @@
             <input type="email" class="form-control sharpr" id="addEmail" name="Email" placeholder="E-Mail"/>
         </div>
         <button class="btn btn-main sharpr" id="k-add">Lägg till</button>
-        <button class="btn btn-sec sharpr" data-toggle="collapse" href="#addForm">Avbryt</button>
+        <button class="btn btn-sec sharpr" data-toggle="collapse" href="#k-form-wrap">Avbryt</button>
     </form>
 </div>
 <script>
@@ -41,9 +44,13 @@
                 traditional: true,
                 success: function (result) {
                     console.log("result = " + result);
-                    //$("tr.info").each(function () { $(this).remove() });
+                    $("#addForm :input").each(function () {
+                        $(this).val('');
+                    });
+                    $("#addFirstName").focus();
                 }
             });
+
         });
     })
 </script>

@@ -205,6 +205,7 @@
       <DependentUpon>ContactsDBModel.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\jquery-1.11.3.min.map" />
+    <Content Include="Views\Home\_contTable.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

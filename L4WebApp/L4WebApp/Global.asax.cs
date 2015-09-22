@@ -17,4 +17,5 @@ namespace L4WebApp
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
+
 }

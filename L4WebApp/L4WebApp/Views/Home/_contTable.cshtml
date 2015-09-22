@@ -1,0 +1,21 @@
+﻿@using L4WebApp.Models
+@model IEnumerable<Contact>
+    <thead>
+        <tr>
+            <th>Förnamn</th>
+            <th>Efternamn</th>
+            <th>Telefonnummer</th>
+            <th>E-Mail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Contact n in Model)
+        {
+            <tr class="contactRow" data-attribute="@n.Id">
+                <td>@n.Fname</td>
+                <td>@n.Lname</td>
+                <td>@n.Telnum</td>
+                <td>@n.Email</td>
+            </tr>
+        }
+    </tbody>
