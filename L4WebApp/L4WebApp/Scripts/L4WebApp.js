@@ -47,7 +47,7 @@
         },
         errorElement: "span",
         errorClass: "help-block",
-        submitHandler: function(form) {
+        submitHandler: function() {
             var valuesArr = new Array();
             valuesArr[0] = $("#addFirstName").val();
             valuesArr[1] = $("#addLastName").val();
@@ -100,7 +100,7 @@ $("#k-remove").on("click", function(e) {
         data: { ids: activated },
         traditional: true,
         success: function(result) {
-            if (result != false) {
+            if (result !== false) {
                 updateContacts();
             }
         }
