@@ -206,6 +206,9 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
+# Web_config
+Web.config
+
 # LightSwitch generated files
 GeneratedArtifacts/
 _Pvt_Extensions/
