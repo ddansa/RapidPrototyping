@@ -11,12 +11,12 @@ namespace L4WebApp
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+            /*bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                        "~/Scripts/jquery.validate*"));*/
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
                         "~/Scripts/L4WebApp.js",
-                        "~/Scripts/validator.js",
+                        "~/Scripts/jquery.validate.min.js",
                         "~/Scripts/jquery.quicksearch.js"
                         ));
 
