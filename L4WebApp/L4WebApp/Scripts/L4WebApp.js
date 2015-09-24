@@ -4,7 +4,7 @@
     }, "Please enter a valid phone number. (Only numbers, 8-15 characters)");
 
     $.validator.addMethod("strictermail", function(value, element) {
-        return this.optional(element) || /^[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(value);
+        return this.optional(element) || /^[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i.test(value);
     }, "Please enter a valid email address.");
 
     $("#addForm").validate({

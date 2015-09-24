@@ -32,7 +32,7 @@ namespace L4WebApp.Controllers
         {
             // Creates a dictionary of Regex patterns, used for easier access
             // Each entry contains the type of data we validate and the regex pattern for that data.
-            Dictionary<Types, Regex> regexes = new Dictionary<Types, Regex>()
+            var regexes = new Dictionary<Types, Regex>()
             {
                 {
                     Types.Name, new Regex(@"^[\p{L}\s'.-]{2,20}$")
@@ -41,7 +41,7 @@ namespace L4WebApp.Controllers
                     Types.Telnum, new Regex(@"^[\+]?[\s\d]{8,15}$")
                 },
                 {
-                    Types.Email, new Regex(@"^[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+                    Types.Email, new Regex(@"^(?i)[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
                 }
             };
             // Checks the input towards the specified type in our regex dictionary
@@ -82,7 +82,7 @@ namespace L4WebApp.Controllers
             return PartialView("_contTable", _db.Contacts.ToList());
         }
 
- 
+
         // POST: Home/Create
         [HttpPost]
         public ActionResult Create(List<string> values)
