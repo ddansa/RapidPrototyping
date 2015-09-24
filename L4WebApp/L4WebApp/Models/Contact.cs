@@ -19,6 +19,5 @@ namespace L4WebApp.Models
         public string Lname { get; set; }
         public string Telnum { get; set; }
         public string Email { get; set; }
-        public Nullable<System.DateTime> DateAdded { get; set; }
     }
 }

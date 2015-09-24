@@ -10,52 +10,7 @@
             <h3 class="panel-title">Dina Kontakter</h3>
         </div>
         <table class="table table-hover table-responsive" id="contactTable">
-            <thead>
-                <tr>
-                    <th>Förnamn</th>
-                    <th>Efternamn</th>
-                    <th>Telefonnummer</th>
-                    <th>E-Mail</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (Contact n in Model)
-                {
-                    <tr class="contactRow" data-attribute="@n.Id">
-                        <td>@n.Fname</td>
-                        <td>@n.Lname</td>
-                        <td>@n.Telnum</td>
-                        <td>@n.Email</td>
-                    </tr>
-                }
-            </tbody>
+            @Html.Partial("_contTable")
         </table>
-    </div>
 </div>
-
-<script>
-    $(function() {
-        $("#k-remove").click(function (e) {
-            e.preventDefault();
-            var activated = new Array(),
-                id;
-            $("tr.info").each(function () {
-                id = $(this).data("attribute");
-                //console.log(id);
-                activated.push(id);
-            });
-
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("Delete", "Home")',
-                data: {ids : activated},
-                //dataType: "json",
-                traditional: true,
-                success: function (result) {
-                    console.log(result);
-                }
-            });
-            return false;
-        });
-    });
-</script>
+</div>

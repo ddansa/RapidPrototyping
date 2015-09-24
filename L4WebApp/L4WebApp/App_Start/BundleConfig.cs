@@ -1,4 +1,4 @@
-﻿using System.Web;
+﻿//using System.Web;
 using System.Web.Optimization;
 
 namespace L4WebApp
@@ -11,11 +11,14 @@ namespace L4WebApp
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+            /*bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                        "~/Scripts/jquery.validate*"));*/
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                        "~/Scripts/L4WebApp.js"));
+                        "~/Scripts/L4WebApp.js",
+                        "~/Scripts/jquery.validate.min.js",
+                        "~/Scripts/jquery.quicksearch.js"
+                        ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

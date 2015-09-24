@@ -18,9 +18,9 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -134,6 +134,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\ContactsDBazureModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContactsDBazureModel.edmx</DependentUpon>
+      <LastGenOutput>ContactsDBazureModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ContactsDBazureModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContactsDBazureModel.edmx</DependentUpon>
+      <LastGenOutput>ContactsDBazureModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\ContactsDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ContactsDBModel.edmx</DependentUpon>
@@ -152,7 +162,15 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\ContactsDBazureModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ContactsDBazureModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ContactsDBazureModel.edmx.diagram">
+      <DependentUpon>ContactsDBazureModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\L4WebApp.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -175,7 +193,22 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact.cs">
-      <DependentUpon>ContactsDBModel.tt</DependentUpon>
+      <DependentUpon>ContactsDBazureModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactsDBazureModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactsDBazureModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactsDBazureModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactsDBazureModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactsDBazureModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactsDBazureModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactsDBModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -205,6 +238,7 @@
       <DependentUpon>ContactsDBModel.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\jquery-1.11.3.min.map" />
+    <Content Include="Views\Home\_contTable.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

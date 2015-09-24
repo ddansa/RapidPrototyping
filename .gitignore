@@ -186,8 +186,8 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 
 # SQL Server files
-*.mdf
-*.ldf
+#*.mdf
+#*.ldf
 
 # Business Intelligence projects
 *.rdl.data
@@ -205,6 +205,9 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# Web_config
+Web.config
 
 # LightSwitch generated files
 GeneratedArtifacts/
